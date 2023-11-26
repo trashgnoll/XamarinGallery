@@ -7,8 +7,8 @@
         <StackLayout>
             <Image Source="{Binding PathToPicture}" 
                    Aspect="AspectFill"
-                   HorizontalOptions="Center"
-                   VerticalOptions="Center"/>
+                   HorizontalOptions="FillAndExpand"
+                   VerticalOptions="FillAndExpand"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

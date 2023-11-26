@@ -22,7 +22,6 @@ namespace PicApp.Pages
         
         readonly string path = @"/storage/emulated/0/Pictures/";
         private ObservableCollection<PictureInfo> _pictureList { get; set; }
-        private PictureInfo _currentPicture;
 
         public GalleryPage()
         {

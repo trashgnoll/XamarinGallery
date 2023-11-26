@@ -19,7 +19,7 @@ namespace PicApp.Pages
             _password = Preferences.Get("Password", String.Empty);
             if (_password != string.Empty)
             {
-                lPin.Text = "Введите пин-код для входа:";
+                lPin.Text = "PIN-код для входа:";
             }
         }
 
@@ -28,11 +28,11 @@ namespace PicApp.Pages
             string enterPwd = Password.Text;
             if (_password == string.Empty)
             {
-                Preferences.Set("Password", enterPwd);
+                Preferences.Set("Password", enterPwd.GetHashCode());
             }
             else
             {
-                if (_password != Password.Text)
+                if (_password.GetHashCode() != Password.Text.GetHashCode())
                 {
                     lInfoMsg.Text = "Неверный ПИН-код";
                     return;
@@ -46,7 +46,7 @@ namespace PicApp.Pages
         {
             if (Password.Text.Length != 4)
             {
-                lInfoMsg.Text = "ПИН-код должен состоять из 4 символов";
+                lInfoMsg.Text = "PIN-код должен состоять из 4 символов";
                 endPwdButton.IsEnabled = false;
             }
             else
